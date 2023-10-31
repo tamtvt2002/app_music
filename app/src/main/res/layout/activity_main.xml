@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_weight="8.8"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:text="Tên bài hát"
+            android:textColor="#fff"
+            android:textSize="21sp"
+            android:fontFamily="sans-serif-condensed-medium"></TextView>
+
+        <ImageView
+            android:id="@+id/btnShowListSong"
+            android:layout_weight="1.2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/icon_list"
+            android:background="@drawable/round_back_10"
+            android:padding="8dp"></ImageView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/btnTypePlay"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_above="@+id/totalTimeSong"
+            android:layout_marginStart="335dp"
+            android:background="@drawable/round_back_10"
+            android:src="@drawable/icon_loop"></ImageButton>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/startTimeSong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:text="00:00"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"></TextView>
+
+            <SeekBar
+                android:id="@+id/playerSeekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/totalTimeSong"
+                android:layout_toEndOf="@+id/startTimeSong"
+                android:max="100"
+                android:progress="50"></SeekBar>
+
+            <TextView
+                android:id="@+id/totalTimeSong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:text="11:11"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"></TextView>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/btnController"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:id="@+id/btnPre10"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/round_back_10"
+                android:src="@drawable/icon_pre10"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/btnPrevious"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/round_back_10"
+                android:src="@drawable/icon_previous"></ImageButton>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/playPauseCard"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+                android:background="@drawable/round_back_10"
+                app:cardBackgroundColor="#7960E5"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp"
+                app:cardUseCompatPadding="true">
+
+                <ImageButton
+                    android:id="@+id/btnPlayPause"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/round_back_10"
+                    android:src="@drawable/icon_play"></ImageButton>
+            </androidx.cardview.widget.CardView>
+
+            <ImageButton
+                android:id="@+id/btnNext"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:background="@drawable/round_back_10"
+                android:src="@drawable/icon_next"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/btnNext10"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/round_back_10"
+                android:src="@drawable/icon_next10"></ImageButton>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_avatarSong"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_below="@id/layoutTop"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/song1"></de.hdodenhof.circleimageview.CircleImageView>
+
+
+
+
+</RelativeLayout>
